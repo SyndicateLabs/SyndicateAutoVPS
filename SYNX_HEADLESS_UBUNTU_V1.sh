@@ -9,9 +9,11 @@
 
 clear
 echo "Fingers crossed..... Thanks to REFFI for helping us test it :)"
-echo "This script builds Syndicated from https://github.com/SyndicateLabs/Syndicate Repository on to an Ubuntu VPS like vultr $5"
+echo "This script builds Syndicated from https://github.com/SyndicateLabs/SyndicateQT Repository on to an Ubuntu 14.04 VPS like Vultr $5"
 echo "It also adds 3G of swap space and runs the wallet for your first instance"
 echo "This script must be run as root"
+echo "Created by community member Bbobb & fully reviewed by the development team."
+sleep 5
 
 fallocate -l 3G /swapfile
 chmod 600 /swapfile
@@ -43,7 +45,7 @@ echo -n "Key In the port your want the RPC to listen on  press[ENTER]: "
 read rpcprt
 echo -n "Key In the port your want the SYNX Daemon to listen on  press[ENTER]: "
 read synxprt
-echo -e "rpcuser=$usrnam \nrpcpassword=$usrpas \nrpcallowip=127.0.0.1 \nrpcport=$rpcprt \nport=$synxprt \nserver=1 \nlisten=1 \ndaemon=1 \nlogtimestamps=1 \nmnconflock=0 \n" > ~/.Syndicate/Syndicate.conf
+echo -e "rpcuser=$usrnam \nrpcpassword=$usrpas \nrpcallowip=127.0.0.1 \nrpcport=$rpcprt \nport=$synxprt \nserver=1 \nlisten=1 \ndaemon=1 \nlogtimestamps=1 \nmnconflock=0 \naddnode=45.63.43.122:9999 \naddnode=45.32.156.245:9999 \naddnode=108.61.174.206:9999 \naddnode=45.63.62.79:9999 \naddnode=45.63.52.48:9999 \naddnode=45.63.111.165:9999 \naddnode=104.238.133.191:9999 \naddnode=45.32.148.12:9999 \naddnode=45.32.225.152:9999 \naddnode=45.63.27.232:9999 \naddnode=104.238.151.49:9999 \n" > ~/.Syndicate/Syndicate.conf
 Syndicated
 echo "Hold your horses for 10 sec"
 sleep 10
